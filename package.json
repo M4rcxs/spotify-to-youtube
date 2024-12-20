@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "expressjs": "^1.0.1",
+    "google-auth-library": "^9.15.0",
+    "googleapis": "^144.0.0"
+  }
+}
