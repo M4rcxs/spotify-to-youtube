@@ -3,10 +3,13 @@ const express = require('express');
 const axios = require('axios');
 const querystring = require('querystring');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+
 
 const app = express();
 const PORT = 3001;
 
+app.use(cors());
 const SPOTIFY_AUTH_URL = 'https://accounts.spotify.com/api/token';
 const YOUTUBE_API_URL = 'https://www.googleapis.com/youtube/v3';
 
@@ -264,3 +267,7 @@ app.get('/youtube/playlists', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
+
+app.get('/api', (req, res) => {
+    res.json({ message: 'Backend is working with CORS enabled for all origins!' });
+  });
