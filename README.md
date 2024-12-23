@@ -5,5 +5,4 @@ npm install
 
 node index
 
-# Atention
 Add all Enviroment keys!
