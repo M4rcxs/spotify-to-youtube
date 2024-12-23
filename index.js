@@ -68,12 +68,14 @@ app.get('/callback', async (req, res) => {
 
         YTB_ACCESS_TOKEN = access_token;
 
-        res.send('Authentication completed. Use the token in the terminal for your requests.');
+        res.redirect(`http://localhost:3000/playlist`);
     } catch (error) {
         console.error('Error obtaining OAuth token:', error.response?.data || error.message);
-        res.status(500).send('Error authenticating with OAuth.');
+
+        res.redirect(`http://localhost:3000/error?message=${encodeURIComponent('Error authenticating with OAuth')}`);
     }
 });
+
 
 const refreshSpotifyToken = async () => {
     try {
